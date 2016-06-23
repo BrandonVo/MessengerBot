@@ -127,6 +127,10 @@ function kittenMessage(recipientId, text) {
                 }
             }
         };
+
+        sendMessage(recipientId, message);
+
+        return true;
       }
     }
 
