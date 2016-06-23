@@ -57,6 +57,10 @@ function sendMessage(recipientId, message) {
     });
 };
 
+function weatherMessage(recipentId, message){
+
+}
+
 // send rich message with kitten
 function kittenMessage(recipientId, text) {
 
@@ -95,7 +99,37 @@ function kittenMessage(recipientId, text) {
 
             return true;
         }
+    } else {
+      if (values.length === 2 && values[1] === 'random'){
+        var num1 = Math.floor((Math.random() * 100) + 1);
+        var num2 = Math.floor((Math.random() * 100) + 1);
+        var imageUrl = "https://placekitten.com/" + num1 + "/" + num2;
+
+        message = {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "generic",
+                    "elements": [{
+                        "title": "Kitten",
+                        "subtitle": "Cute kitten picture",
+                        "image_url": imageUrl ,
+                        "buttons": [{
+                            "type": "web_url",
+                            "url": imageUrl,
+                            "title": "Show kitten"
+                            }, {
+                            "type": "postback",
+                            "title": "I like this",
+                            "payload": "User " + recipientId + " likes kitten " + imageUrl,
+                        }]
+                    }]
+                }
+            }
+        };
+      }
     }
+
 
     return false;
 
