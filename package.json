@@ -1,13 +1,13 @@
 {
   "name": "testbot",
   "version": "1.0.0",
-  "description": "test messenger bot",
+  "description": "TestBot Server App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "",
+  "author": "Brandon Vo",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
